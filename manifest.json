@@ -1,0 +1,27 @@
+{
+    "name": "Hotpot Icon to Clipboard",
+    "description": "Don't copy symbol name, copy symbol itself",
+    "version": "1.0",
+    "author": "Nick Qurle",
+    "manifest_version": 3,
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "permissions": [
+        "storage",
+        "clipboardWrite"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://https://hotpot.ai/free-icons/"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "content-script.js"
+            ]
+        }
+    ]
+}

@@ -2,14 +2,14 @@
 const elementsToCopy = 'i'
 
 function handle(element) {
-    if (element.tagName.matches(elementsToCopy)) copy(element.innerHTML)
+    if (element.matches(elementsToCopy)) copy(element.innerHTML)
 }
 
 function copy(text) {
     navigator.permissions.query({ name: "clipboard-write" }).then(result => {
         if (result.state == "granted" || result.state == "prompt") {
             navigator.clipboard.writeText(text).then(function () {
-                console.log('copied\n' + element.innerHTML)
+                console.log('copied\n' + text)
             }, function () {
                 console.error('Extension Hotpot Icon to Clipboard failed to write to clipboard\nContact the dev at https://qurle.net/contact')
             });

@@ -16,7 +16,7 @@
     "content_scripts": [
         {
             "matches": [
-                "*://https://hotpot.ai/free-icons/"
+                "*://hotpot.ai/free-icons/*"
             ],
             "run_at": "document_end",
             "js": [
